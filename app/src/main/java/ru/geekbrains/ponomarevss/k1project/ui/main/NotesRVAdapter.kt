@@ -3,6 +3,7 @@ package ru.geekbrains.ponomarevss.k1project.ui.main
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item.view.*
 import ru.geekbrains.ponomarevss.k1project.R
@@ -31,7 +32,7 @@ class NotesRVAdapter : RecyclerView.Adapter<NotesRVAdapter.ViewHolder>() {
         fun bind(note: Note) = with(itemView){
             title_tv.text = note.title
             body_tv.text = note.body
-            setBackgroundColor(note.color)
+            (itemView as CardView).setBackgroundColor(note.color)
         }
     }
 }
